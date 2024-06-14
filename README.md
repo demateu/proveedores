@@ -37,5 +37,5 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 - Documentación en mano, inicio la curva del aprendizaje de información nueva
 - Voy descubriendo las 7 diferencias entre Laravel y Symfony...y me sorprende acabar descubriendo que Symfony es el padre de Laravel
 - Momento sorpresa
-- ![Texto alternativo](https://www.istockphoto.com/es/foto/vader-darth-gm497383972-79082321)
+- ![Texto alternativo]([https://www.istockphoto.com/es/foto/vader-darth-gm497383972-79082321](https://i.blogs.es/f8be48/daily-life-of-darth-vader-2/1366_2000.jpg))
 
