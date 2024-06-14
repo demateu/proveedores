@@ -34,4 +34,8 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 - Y como no me gustan las dudas, lo pregunto por email y me aclaran que puedo usar versiones más recientes, así que opto por la ^4.4.0 que es la última versión de la serie 4.x con soporte a largo plazo (LTS) y que incluye compatibilidad con PHP 8
 - Y todo empieza a fluir 😁
 ### Dia 2:
-- 
+- Documentación en mano, inicio la curva del aprendizaje de información nueva
+- Voy descubriendo las 7 diferencias entre Laravel y Symfony...y me sorprende acabar descubriendo que Symfony es el padre de Laravel
+- Momento sorpresa
+- ![Texto alternativo](https://www.istockphoto.com/es/foto/vader-darth-gm497383972-79082321)
+
