@@ -40,6 +40,7 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 ![El padre de Laravel](https://i.blogs.es/f8be48/daily-life-of-darth-vader-2/1366_2000.jpg)
 - Me planteo haber vivido engañada toda mi vida, pero me siento feliz de saberlo y me pongo ¡manos a la obra! 📌
 - ⏰ Tic-tac tic-tac... 1er Controller, 1eras vistas, consigo listar los primeros registros de la Base de datos..
+- Decido instalar el paquete zenstruck/foundry para tener 1 Factory para los datos de prueba
 ### Dia 3 (sábado):
 - ...
 ### Dia 4 (domingo) -> 💀El Deadline:
