@@ -24,6 +24,7 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 - Visualizar el listado completo de proveedores que tenemos en el sistema
 
 <hr>
+
 ## Diario
 
 - Dia 1:
