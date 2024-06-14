@@ -20,15 +20,15 @@ class ProviderController extends AbstractController
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @author demateu
+     * 
+     * @Route("/proveedores/crear", name="crear.proveedor")
+     * 
+     * Muestra el formulario para crear un nuevo proveedor
      */
     public function create()
     {
-        return $this->render('provider/create.html.twig', [
-            //...
-        ]);
+        return $this->render('provider/create.html.twig');
     }
 
 
@@ -51,12 +51,12 @@ class ProviderController extends AbstractController
      * @param  \App\Models\Cupon  $cupon
      * @return \Illuminate\Http\Response
      */
-    /*
-    public function show(Cupon $cupon)
+    public function show($proveedor)
     {
-        //
+        return $this->render('provider/show.html.twig', [
+            'proveedor' => $proveedor,
+        ]);
     }
-    */
 
     /**
      * Show the form for editing the specified resource.
@@ -65,7 +65,7 @@ class ProviderController extends AbstractController
      * @return \Illuminate\Http\Response
      */
     /*
-    public function edit(Cupon $cupon)
+    public function edit($proveedor)
     {
         //
     }
@@ -79,24 +79,25 @@ class ProviderController extends AbstractController
      * @return \Illuminate\Http\Response
      */
     /*
-    public function update(Request $request, Cupon $cupon)
+    public function update(Request $request, $proveedor)
     {
         //
     }
     */
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Cupon  $cupon
-     * @return \Illuminate\Http\Response
+     * @author demateu
+     * Elimina el proveedor que se indica
+     * 
+     * @Route("/proveedores/eliminar/{id}", name="eliminar.proveedor", methods={"DELETE"})
      */
-    /*
-    public function destroy(Cupon $cupon)
+    public function destroy($id)
     {
-        //
+        return $this->render('provider/index.html.twig', [
+
+        ]);
     }
-    */
+
 
 
 }

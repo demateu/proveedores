@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProviderController!{% endblock %}
+{% block title %}🥑 Proveedores{% endblock %}
 
 {% block body %}
-<style>
-</style>
+
+<div class="alert alert-warning text-center" role="alert">
+    ⚠ No olvides que esta aplicación es una prueba técnica. Seguramente las funcionalidades seran muy básicas 🤭.
+</div>
 
 <div class="container-fluid px-5">
 
-    <section id="header">
-        <div class="row d-flex justify-content-center" style="padding-top: 48px;">
-            <div class="col-6 text-center">
+    <section id="header" class="py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8 text-center">
                 <h3 style="font-size: 1.75rem; font-weight: bold;">
-                    Listado Proveedores
+                    Listado de Proveedores
                 </h3>
                 <p>
-                    Localiza usuarias, edita sus datos, elíminalas, exporta los datos filtrados...
-                    <br>
-                    ⚠️ No olvides que el panel de administración está en construcción y seguramente habrá cosas que no funcionen 🦺.
+                    Localiza proveedores, edita sus datos, elíminalos...
                 </p>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-                <a href="#" class="btn btn-primary btn"><i class="fas fa-plus"></i> Crear Usuario</a>
+                <div class="col-12 d-flex justify-content-center p-2">
+                    <a href="{{ url('crear.proveedor') }}" class="btn btn-outline-primary btn"><i class="fas fa-plus"></i> Crear Proveedor</a>
+                </div>
             </div>
         </div>
     </section>
@@ -41,14 +41,15 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Id <button class="btn-sm">↕</button></th>
-                            <th>Nombre <button class="btn-sm">↕</button></th>
-                            <th> __('Apellidos') </th>
-                            <th>Nick (@)</th>
+                            <th>Id</th>
+                            <th>Nombre</th>
                             <th>Email</th>
                             <th>Teléfono</th>
-                            <th>Alta registro <span title="Fecha de la verificación del email">ℹ️</span></th>
-                            <th> __('Acciones') </th>
+                            <th>Tipo</th>
+                            <th>Estatus</th>
+                            <th>Creado</th>
+                            <th>Actualizado</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,13 +68,16 @@
                                     No verificado
                                 @endif
                             </td>
+                            <td>
+                            </td>
                             <td class="d-flex justify-content-start">
-                                <a href="#" class="btn btn-outline-primary" role="button" title="Ver datos de la persona"><i class="far fa-eye"></i></a>
-                                <a href="#" class="btn btn-outline-primary" role="button" title="Editar datos de la persona"><i class="fas fa-edit"></i></a>
-                                <form action="#" method="POST">
-                                    <button type="submit" class="btn btn-outline-primary" title="Borrar la persona"><i class="far fa-trash-alt"></i></button>
+                                <a href="#" class="btn btn-outline-primary" role="button"><i class="far fa-eye"></i></a>
+                                <a href="#" class="btn btn-outline-primary" role="button"><i class="fas fa-edit"></i></a>
+                                <form action="{{ url('eliminar.proveedor', {'id': 3}) }}" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar este proveedor?');">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ 3) }}">
+                                    <button type="submit" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></button>
                                 </form>
-                                <a href="#" class="btn btn-outline-primary" role="button" title="Enviar reestablecimiento de contraseña"><i class="fa-regular fa-paper-plane"></i></a>
                             </td>
                         </tr>                    
                         @endforeach

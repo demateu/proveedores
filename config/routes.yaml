@@ -9,5 +9,20 @@ index:
     controller: App\Controller\ProviderController::index
 
 create:
-    path: crear
+    path: /proveedores/crear
     controller: App\Controller\ProviderController::create
+
+show:
+    path: /proveedores/{proveedor}
+    controller: App\Controller\ProviderController::show
+    defaults: {proveedor: 'proveedor nulo'}
+    methods: [GET]
+    requirements:
+      proveedor: \w
+
+#delete:
+eliminar.proveedor:
+    path: /proveedores/eliminar/{id?}
+    controller: App\Controller\ProviderController::destroy
+    methods: [DELETE]
+    defaults: {id: 1}
