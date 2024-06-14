@@ -42,5 +42,5 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 - ⏰ Tic-tac tic-tac... 1er Controller, 1eras vistas, consigo listar los primeros registros de la Base de datos..
 ### Dia 3 (sábado):
 - ...
-### Dia 4 (domingo) 💀Deadline:
+### Dia 4 (domingo) -> 💀El Deadline:
 - ...
