@@ -27,18 +27,20 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 
 ## Diario
 
-### Dia 1:
+### Dia 1 (jueves tarde):
 - Abro el pdf de la prueba y leo que tengo que usar Symfony 4
 - Entro en incertidumbre porque no sé si el número 4 es un 'must' o es solo porque el pdf no se había actualizado..o porque es la versión que usan allí
 - Me debato entre la duda de si podré tirar millas con una versión más reciente y por atnto ya compatible con PHP 8
 - Y como no me gustan las dudas, lo pregunto por email y me aclaran que puedo usar versiones más recientes, así que opto por la ^4.4.0 que es la última versión de la serie 4.x con soporte a largo plazo (LTS) y que incluye compatibilidad con PHP 8
 - Y todo empieza a fluir 😁
-### Dia 2:
+### Dia 2 (viernes):
 - Documentación en mano, inicio la curva del aprendizaje de información nueva
 - Voy descubriendo las 7 diferencias entre Laravel y Symfony...y me sorprende acabar descubriendo que Symfony es el padre de Laravel
 - Momento ¡wOw!...¿En serio? Y que creía que eran 'primos hermanos'...
 ![El padre de Laravel](https://i.blogs.es/f8be48/daily-life-of-darth-vader-2/1366_2000.jpg)
 - Me planteo haber vivido engañada toda mi vida, pero me siento feliz de saberlo y me pongo ¡manos a la obra! 📌
 - ⏰ Tic-tac tic-tac... 1er Controller, 1eras vistas, consigo listar los primeros registros de la Base de datos..
-### Dia 3:
-
+### Dia 3 (sábado):
+- ...
+### Dia 4 (domingo) 💀Deadline:
+- ...
