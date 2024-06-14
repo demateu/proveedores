@@ -30,7 +30,7 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 ### Dia 1 (jueves tarde):
 - Abro el pdf de la prueba y leo que tengo que usar Symfony 4
 - Entro en incertidumbre porque no sé si el número 4 es un 'must' o es solo porque el pdf no se había actualizado..o porque es la versión que usan allí
-- Me debato entre la duda de si podré tirar millas con una versión más reciente y por atnto ya compatible con PHP 8
+- Me debato entre la duda de si podré tirar millas con una versión más reciente y por tanto ya compatible con PHP 8
 - Y como no me gustan las dudas, lo pregunto por email y me aclaran que puedo usar versiones más recientes, así que opto por la ^4.4.0 que es la última versión de la serie 4.x con soporte a largo plazo (LTS) y que incluye compatibilidad con PHP 8
 - Y todo empieza a fluir 😁
 ### Dia 2 (viernes):
