@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Enum\ProviderType;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=ProviderRepository::class)
@@ -54,23 +55,23 @@ class Provider
     private $estado; //activos o no
 
     /**
-     * @ORM\Column(type="datetime")
-     * @Assert\NotNull
+     * @ORM\Column(type="datetime", nullable=true)
+     * @Gedmo\Timestampable(on="create")
      */
-    private $createdAt;
+    private $created_at;
 
     /**
-     * @ORM\Column(type="datetime")
-     * @Assert\NotNull
+     * @ORM\Column(type="datetime", nullable=true)
+     * @Gedmo\Timestampable(on="update")
      */
-    private $updatedAt;
+    private $updated_at;
 
     /**
      * @ORM\PrePersist
      */
     public function setCreatedAtValue(): void
     {
-        $this->createdAt = new \DateTime();
+        $this->created_at = new \DateTime();
     }
 
     /**
@@ -78,7 +79,21 @@ class Provider
      */
     public function setUpdatedAtValue(): void
     {
-        $this->updatedAt = new \DateTime();
+        $this->updated_at = new \DateTime();
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
     }
 
     public static function validateTipo($tipo, ExecutionContextInterface $context, $payload)
@@ -156,12 +171,12 @@ class Provider
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->createdAt;
+        return $this->created_at;
     }
 
     public function getUpdatedAt(): ?\DateTimeInterface
     {
-        return $this->updatedAt;
+        return $this->updated_at;
     }
 
     public function getId(): ?int
@@ -169,20 +184,11 @@ class Provider
         return $this->id;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+
+    public function __toString()
     {
-        $this->createdAt = $createdAt;
-
-        return $this;
+        return $this->nombre; // o cualquier otra propiedad que tenga sentido
     }
-
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
 
 
 }

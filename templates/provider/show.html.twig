@@ -1,1 +1,65 @@
-{{ proveedor }}
+{# templates/provider/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section id="header" class="py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8 text-center">
+                <h1 style="font-size: 1.75rem; font-weight: bold;">
+                    Detalles del proveedor {{ proveedor.id }}
+                </h1>
+                <p class="color-gris-medio">
+                    👀 Aquí estan los datos del proveedor seleccionado 👀
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <form id="form-actualizar-proveedor" action="{{ path('proveedor.update', {'id': proveedor.id}) }}" method="post">
+        <h2 class="h5 text-center">DATOS PERSONALES</h2>
+        <div class="form-group row">
+            <div class="col-lg col-12 m-1">
+                <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="🙋🏻‍♂️ Nombre" value="{{ proveedor.nombre }}">
+            </div>
+            <div class="col-lg col-12 m-1">
+                <input type="email" id="email" name="email" class="form-control" required placeholder="✉️ Correo electrónico" value="{{ proveedor.email }}">
+            </div>
+            <div class="col-lg col-12 m-1">
+                <input type="number" id="telefono" name="telefono" class="form-control" required placeholder="📞 Teléfono"
+                    min="100000000" max="999999999" value="{{ proveedor.telefono }}">
+            </div>
+        </div>
+        <hr>
+        <h2 class="h5 text-center">CONFIGURACIÓN</h2>
+        <div class="form-group row d-flex justify-content-center">
+            <div class="col-lg-6 col-12 m-1">
+                <select id="tipo_proveedor" name="tipo_proveedor" class="form-select" required>
+                    <option value="">Tipo de proveedor</option>
+                    <option value="hotel" {% if proveedor.tipo == 'hotel' %}selected{% endif %}>hotel</option>
+                    <option value="pista" {% if proveedor.tipo == 'pista' %}selected{% endif %}>pista</option>
+                    <option value="complemento" {% if proveedor.tipo == 'complemento' %}selected{% endif %}>complemento</option>
+                </select>
+            </div>
+                                    
+            <div class="form-row p-4 row d-flex justify-content-center">
+                <div class="col-8 form-check form-switch d-flex justify-content-center align-items-center">
+                    <label class="switchlabel">
+                        <div class="switchtoggle">
+                            <input class="form-check-input switchtoggle-state" type="checkbox" role="switch" id="status" name="status" value="activo" {% if proveedor.estado %}checked{% endif %}>
+                            <div class="switchindicator"></div>
+                        </div>
+                    </label>
+                    {% if proveedor.estado %}
+                        <div class="px-4">✅ Activo</div>
+                    {% else %}
+                        <div class="px-4">⛔️ Inactivo</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <button class="btn btn-outline-success" type="submit">Actualizar</button>
+            <a href="{{ path('proveedor.index') }}" class="btn btn-outline-primary" role="button">Salir</a>
+        </div>
+    </form>
+{% endblock %}

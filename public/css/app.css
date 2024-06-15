@@ -3,7 +3,8 @@
     CSS INDEX
     =========================================
     00. Ressets
-    01. ...
+    01. Pagination
+    02. Switch
 
 -----------------------------------------------------------------------------------*/
 
@@ -40,4 +41,88 @@ ul{
     padding-left: 0;
 }
 
-/* 00. Ressets..............................*/
+/* 01. Pagination..............................*/
+
+.pagination span{
+    padding: 5px;
+    border: 0.5px solid lightgray; /* Ajusta el grosor y el color del borde */
+    background-color: white; /* Fondo blanco para el botón */
+    color: grey; /* Color del texto */
+    cursor: pointer; /* Mostrar cursor de mano para indicar interactividad */
+}
+
+.pagination .page a,
+.pagination .previous a,
+.pagination .next a,
+.pagination .first a,
+.pagination .last a
+{
+    color: grey;
+}
+
+.pagination .page:hover,
+.pagination .first:hover,
+.pagination .last:hover,
+.pagination .previous:hover,
+.pagination .next:hover
+{
+    color: black;
+    background-color: lightgray;
+}
+
+.pagination .current{
+    color: black;
+    background-color: lightgray;
+}
+
+
+/* 02. Switch..............................*/
+
+.switchlabel {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: #394a56;
+}
+
+.switchlabel-text {
+    margin-left: 16px;
+}
+
+.switchtoggle {
+    isolation: isolate;
+    position: relative;
+    height: 30px;
+    width: 60px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: -8px -4px 8px 0px #ffffff,
+        8px 4px 12px 0px #d1d9e6,
+        4px 4px 4px 0px #d1d9e6 inset,
+        -4px -4px 4px 0px #ffffff inset;
+}
+
+.switchtoggle-state {
+display: none;
+}
+
+.switchindicator {
+height: 100%;
+width: 200%;
+background: #ecf0f3;
+border-radius: 15px;
+transform: translate3d(-75%, 0, 0);
+transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+box-shadow: -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6;
+}
+
+.switchtoggle-state:checked ~ .switchindicator {
+transform: translate3d(25%, 0, 0);
+}
+
+
+/* 00. Colores..............................*/
+.color-gris-medio {
+    color: #6c757d;
+}

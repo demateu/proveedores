@@ -4,25 +4,29 @@ clear_cache:
     controller: App\Controller\CacheController::clearCache
 
 # rutas
-index:
+proveedor.index:
     path: /
     controller: App\Controller\ProviderController::index
 
-create:
+proveedor.create:
     path: /proveedores/crear
     controller: App\Controller\ProviderController::create
 
-show:
-    path: /proveedores/{proveedor}
-    controller: App\Controller\ProviderController::show
-    defaults: {proveedor: 'proveedor nulo'}
-    methods: [GET]
-    requirements:
-      proveedor: \w
+proveedor.store:
+    path: /proveedores/guardar
+    controller: App\Controller\ProviderController::store
 
-#delete:
-eliminar.proveedor:
-    path: /proveedores/eliminar/{id?}
+proveedor.show:
+    path: /proveedores/{id}
+    controller: App\Controller\ProviderController::show
+
+proveedor.update:
+    path: /proveedores/{id}/actualizar
+    controller: App\Controller\ProviderController::update
+
+proveedor.destroy:
+    path: /proveedores/{id}/eliminar
     controller: App\Controller\ProviderController::destroy
     methods: [DELETE]
-    defaults: {id: 1}
+
+

@@ -25,7 +25,35 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="alert alert-warning text-center" role="alert">
+            ⚠ Recuerda que esta aplicación es una prueba técnica. Es probable que las funcionalidades sean bastante básicas, ¡pero aún así tiene su encanto! 🤭.
+        </div>
+
+        <div class="row float-end p-3">
+            <div class="col">
+                <button onclick="history.back()" class="btn btn-outline-secondary"><i class="fa-solid fa-rotate-left"></i> Atrás</button>
+            </div>
+        </div>
+
+        {% for flash_message in app.flashes('success') %}
+            <div class="alert alert-success text-center">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+        {% for flash_message in app.flashes('message') %}
+            <div class="alert alert-primary text-center">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+                {% for flash_message in app.flashes('warning') %}
+            <div class="alert alert-warning text-center">
+                {{ flash_message }}
+            </div>
+        {% endfor %}
+
+        <div class="container-fluid px-5">
+            {% block body %}{% endblock %}
+        </div>
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

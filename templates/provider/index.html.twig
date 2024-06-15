@@ -2,13 +2,8 @@
 
 {% block title %}🥑 Proveedores{% endblock %}
 
+
 {% block body %}
-
-<div class="alert alert-warning text-center" role="alert">
-    ⚠ No olvides que esta aplicación es una prueba técnica. Seguramente las funcionalidades seran muy básicas 🤭.
-</div>
-
-<div class="container-fluid px-5">
 
     <section id="header" class="py-5">
         <div class="row d-flex justify-content-center">
@@ -16,81 +11,65 @@
                 <h3 style="font-size: 1.75rem; font-weight: bold;">
                     Listado de Proveedores
                 </h3>
-                <p>
-                    Localiza proveedores, edita sus datos, elíminalos...
+                <p class="color-gris-medio">
+                    🔍Localiza proveedores, 🖌️edita sus datos, 💥elimínalos...
                 </p>
-                <div class="col-12 d-flex justify-content-center p-2">
+                <div class="col-12 d-flex justify-content-center p-3">
                     <a href="{{ url('crear.proveedor') }}" class="btn btn-outline-primary btn"><i class="fas fa-plus"></i> Crear Proveedor</a>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="cuerpo-proveedores">
-        <div class="card">
-            <div class="card-header">
-                ...
-            </div>
-            
-            <div class="card-body">
-                @if (@empty(usuarios))
-                <div class="alert alert-warning">
-                    🤷🏻‍♀️ No hay usuarios...
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Tipo</th>
+                        <th>Estatus</th>
+                        <th>Creado</th>
+                        <th>Actualizado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for proveedor in proveedores.items %}
+                    <tr>
+                        <td>{{ proveedor.id }}</td>
+                        <td>{{ proveedor.nombre }}</td>
+                        <td>{{ proveedor.email }}</td>
+                        <td>{{ proveedor.telefono }}</td>
+                        <td>{{ proveedor.tipo }}</td>
+                        <td>
+                            {% if proveedor.estado %}
+                                <span style="font-size: 0.75rem;">🟢</span> Activo
+                            {% else %}
+                                <span style="font-size: 0.75rem;">🔴</span> No activo
+                            {% endif %}
+                        </td>
+                        <td>{{ proveedor.createdAt|date('d-m-Y') }}</td>
+                        <td>{{ proveedor.updatedAt|date('d-m-Y') }}</td>
+                        <td class="d-flex justify-content-start">
+                            <a href="{{ url('proveedor.show', {'id': proveedor.id}) }}" class="btn btn-outline-primary" role="button"><i class="far fa-eye"></i></a>
+                            <a href="{{ url('proveedor.show', {'id': proveedor.id}) }}" class="btn btn-outline-primary" role="button"><i class="fas fa-edit"></i></a>
+                            <form action="{{ path('proveedor.destroy', {'id': proveedor.id}) }}" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar este proveedor?');">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('eliminar' ~ proveedor.id) }}">
+                                <button type="submit" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></button>
+                            </form>
+                        </td>
+                    </tr>                    
+                    {% endfor %}
+                </tbody>
+            </table>
+                <div class="navigation">
+                    {{ knp_pagination_render(proveedores) }}
                 </div>
-                @else
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Teléfono</th>
-                            <th>Tipo</th>
-                            <th>Estatus</th>
-                            <th>Creado</th>
-                            <th>Actualizado</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (usuarios as usuario)
-                        <tr>
-                            <td> usuario->id </td>
-                            <td> usuario->nombre </td>
-                            <td> usuario->apellidos </td>
-                            <td> usuario->nick </td>
-                            <td> usuario->email </td>
-                            <td> usuario->telefono </td>
-                            <td>
-                                @if (usuario->email_verified_at)
-                                     usuario->email_verified_at->format('d-m-Y') 
-                                @else
-                                    No verificado
-                                @endif
-                            </td>
-                            <td>
-                            </td>
-                            <td class="d-flex justify-content-start">
-                                <a href="#" class="btn btn-outline-primary" role="button"><i class="far fa-eye"></i></a>
-                                <a href="#" class="btn btn-outline-primary" role="button"><i class="fas fa-edit"></i></a>
-                                <form action="{{ url('eliminar.proveedor', {'id': 3}) }}" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar este proveedor?');">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ 3) }}">
-                                    <button type="submit" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></button>
-                                </form>
-                            </td>
-                        </tr>                    
-                        @endforeach
-                    </tbody>
-                </table>
-
-                <!--AÑADO LA PAGINACION-->
-                <div class="clearfix"></div>
-                <!-- ... -->
-                @endif           
-            </div>
         </div>
     </section>
 
-</div>
 {% endblock %}
