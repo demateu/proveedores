@@ -43,6 +43,6 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 - Decido instalar el paquete zenstruck/foundry para tener 1 Factory para los datos de prueba
 ### Dia 3 (sábado):
 - No he tirado la toalla; de hecho se ha convertido en el reto personal del fín de semana >.<
-- Soy consciente que el tipo de proveedor podría ser una tabla aparte, pero como estoy tirando hacia un MPV de momento lo establezco como una especie de SET en la misma entidad 'proveedor'
+- Soy consciente de que el tipo de proveedor podría ser una tabla aparte, pero como estoy tirando hacia un MPV de momento lo establezco como una especie de SET en la misma entidad 'proveedor'
 ### Dia 4 (domingo) -> 💀El Deadline:
 - ...
