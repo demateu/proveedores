@@ -44,5 +44,6 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 ### Dia 3 (sábado):
 - No he tirado la toalla; de hecho se ha convertido en el reto personal del fín de semana >.<
 - Soy consciente de que el tipo de proveedor podría ser una tabla aparte, pero como estoy tirando hacia un MPV de momento lo establezco como una especie de SET en la misma entidad 'proveedor'
+- Bueno, bueno, ya queda poco para terminar..
 ### Dia 4 (domingo) -> 💀El Deadline:
 - ...
