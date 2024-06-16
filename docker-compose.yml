@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+    php-apache:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: php:8.1-apache #arm64v8/php:8.1-apache -> compatibilidad mac...
+        ports:
+            - "8001:80"  # Mapeo del puerto: host:contenedor - accesible en http://localhost:8001 en tu máquina local
+        volumes:
+            - .:/var/www/html
+        environment:
+            APACHE_RUN_USER: www-data
+            APACHE_RUN_GROUP: www-data
+        networks:
+            - symfony_net
+        depends_on:
+            - database
+
+    database:
+        image: mariadb:10.5 # Usa MariaDB que es compatible con ARM64 (antes: mysql:5.7)
+        #image: arm64v8/mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: proveedores
+            MYSQL_USER: root #symfony
+            MYSQL_PASSWORD: root #symfony
+        ports:
+            - "3306:3306" # Cambia este puerto a uno disponible (antes "8889:3306")
+        volumes:
+            - db_data:/var/lib/mysql
+        networks:
+            - symfony_net
+
+networks:
+    symfony_net:
+
+volumes:
+    db_data:
