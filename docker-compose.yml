@@ -26,8 +26,7 @@ services:
             MYSQL_USER: root
             MYSQL_PASSWORD: root
         ports:
-            #- "8889:3306" # Cambia este puerto a uno disponible (antes "8889:3306")
-            - "8890:3306" # Cambia este puerto a uno disponible (antes "8889:3306")
+            - "8889:3306" # Cambiar este puerto a uno disponible (antes "8889:3306")
         volumes:
             - db_data:/var/lib/mysql
         networks:
