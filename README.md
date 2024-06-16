@@ -45,5 +45,6 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 - No he tirado la toalla; de hecho se ha convertido en el reto personal del fín de semana >.<
 - Soy consciente de que el tipo de proveedor podría ser una tabla aparte, pero como estoy tirando hacia un MPV de momento lo establezco como una especie de SET en la misma entidad 'proveedor'
 - Bueno, bueno, ya queda poco para terminar..
+- Sigo pensando que he hecho una 'chapuzilla' incluyendo el tipo de proveedor en la tabla proveedor; si me quedara tiempo quizás lo reviso pero prefiero enfocarme al despliegue con docker
 ### Dia 4 (domingo) -> 💀El Deadline:
 - ...
