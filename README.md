@@ -47,4 +47,7 @@ Necesitaremos que nuestro departamento de contabilidad pueda:
 - Bueno, bueno, ya queda poco para terminar..
 - Sigo pensando que he hecho una 'chapuzilla' incluyendo el tipo de proveedor en la tabla proveedor; si me quedara tiempo quizás lo reviso pero prefiero enfocarme al despliegue con docker
 ### Dia 4 (domingo) -> 💀El Deadline:
-- ...
+- Hoy estoy con la configuración del despliegue con dcker; escojo la imagen de mariadb para que cubra la compatibilidad con macOS
+- Creo las imágenes, cargo los contenedores, pero aun así parece que hay un problema de conexión a la BBDD..
+- Ya no me queda mucho tiempo, así que es posible que lo deje así
+- Volviendo a la aplicación; soy consciente que me quedó la validación de tipos de datos en la parte del backend, para el formulario de crear y el de modificar. Vi que hay 3 formas de hacer formularios en Symfony, y yo me decanté por la menos nativa (la de hacer el form con html). Al no tener las validaciones automáticas, necesitaría más tiempo para ver si puedo replicar una especie de clase tipo Request-validation como se hace en Laravel; esto o aprender las 2 otras formas de creación de formularios, pero tampoco me queda mucho tiempo más
