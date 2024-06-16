@@ -39,8 +39,8 @@ class ProviderController extends AbstractController
         $queryBuilder = $entityManager->getRepository(Provider::class)->createQueryBuilder('p');
 
         // Ordenar por fecha de actualizacion y despues de creación
-        $queryBuilder->orderBy('p.updated_at', 'DESC'); // Ordena por updatedAt (modificado más recientemente)
-        $queryBuilder->addOrderBy('p.created_at', 'DESC'); // Luego ordena por createdAt (creado más recientemente)
+        $queryBuilder->orderBy('p.created_at', 'DESC'); // Ordena por updatedAt (modificado más recientemente)
+        $queryBuilder->addOrderBy('p.updated_at', 'DESC'); // Luego ordena por createdAt (creado más recientemente)
 
         // Pagina los resultados de la consulta
         $pagination = $paginator->paginate(

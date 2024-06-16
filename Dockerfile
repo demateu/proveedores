@@ -25,8 +25,15 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts --no-progress -
 # Configura permisos para las carpetas de Symfony
 RUN chown -R www-data:www-data /var/www/html/var /var/www/html/vendor /var/www/html/public
 
+# Configura el entorno de Apache si es necesario
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+
 # Habilita el módulo de reescritura de Apache
 RUN a2enmod rewrite
+
+# Configura el archivo de host virtual de Apache para Symfony
+COPY docker/apache/symfony.conf /etc/apache2/sites-available/000-default.conf
 
 # Expone el puerto 80 para acceder a la aplicación
 EXPOSE 80
